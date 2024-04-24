@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faMedium, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 
 export const socials = [
   {
@@ -28,6 +29,28 @@ export const socials = [
 ];
 
 const Header = ({socials}) => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const headerRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      if (prevScrollPos > currentScrollPos) {
+        // Scrolling up
+        headerRef.current.style.transform = 'translateY(0)';
+      } else {
+        // Scrolling down
+        headerRef.current.style.transform = 'translateY(-200px)';
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
+
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -43,6 +66,8 @@ const Header = ({socials}) => {
 
   return (
     <Box
+      ref={headerRef}
+      zIndex="1000"
       position="fixed"
       top={0}
       left={0}
