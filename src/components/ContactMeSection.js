@@ -28,19 +28,19 @@ const LandingSection = () => {
       type:'',
       comment:'',
     },
-    onSubmit: async (values) => {
-      
-        try {
-          await submit( values);
-          if (!isLoading && response?.type === 'success') {
-            onOpen('success', response.message);
-          } else {
-            onOpen('error', response.message);
-          }
-        } catch (error) {
-          onOpen('error', 'Something went wrong, please try again later!');
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        await submit('your-api-endpoint', values); // Pass the URL and values
+        if (!isLoading && response?.type === 'success') {
+          onOpen('success', response.message);
+          resetForm(); // Reset the form if submission is successful 
+        } else {
+          onOpen('error', response.message);
         }
-      },
+      } catch (error) {
+        onOpen('error', 'Something went wrong, please try again later!');
+      }
+    },
     validationSchema: Yup.object({
       firstName: Yup.string()
       .min(2, 'Too Short!')
@@ -50,6 +50,7 @@ const LandingSection = () => {
       .email('Invalid email')
       .required('Required'),
       type: Yup.string()
+      .oneOf(['hireMe', 'openSource', 'other'])
       .required('Required'),
       comment: Yup.string()
       .min(10, 'Too Short!')
@@ -57,6 +58,7 @@ const LandingSection = () => {
     }),
   });
 
+  
   return (
     <FullScreenSection
       isDarkBackground
@@ -69,32 +71,30 @@ const LandingSection = () => {
           Contact me
         </Heading>
         <Box p={6} rounded="md" w="100%">
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.firstName && Boolean(formik.errors.firstName)}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
-                  name="firstName"
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  type="text"
+                  {...formik.getFieldProps('firstName')}
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.email && Boolean(formik.errors.email)}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   id="email"
-                  name="email"
                   type="email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
+                  {...formik.getFieldProps('email')}
+                
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type" name="type">
+                <Select id="type" type="type" {...formik.getFieldProps('type')}>
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="openSource">
                     Open source consultancy session
@@ -102,16 +102,14 @@ const LandingSection = () => {
                   <option value="other">Other</option>
                 </Select>
               </FormControl>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.comment && Boolean(formik.errors.comment)}>
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   id="comment"
-                  name="comment"
-                  height={250}
-                  onChange={formik.handleChange}
-                  value={formik.values.comment}
+                  type="comment"
+                  {...formik.getFieldProps('comment')}
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <Button type="submit" colorScheme="purple" width="full">
                 Submit
