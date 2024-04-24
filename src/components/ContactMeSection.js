@@ -22,9 +22,39 @@ const LandingSection = () => {
   const { onOpen } = useAlertContext();
 
   const formik = useFormik({
-    initialValues: {},
-    onSubmit: (values) => {},
-    validationSchema: Yup.object({}),
+    initialValues: {
+      firstName:'',
+      email:'',
+      type:'',
+      comment:'',
+    },
+    onSubmit: async (values) => {
+      
+        try {
+          await submit( values);
+          if (!isLoading && response?.type === 'success') {
+            onOpen('success', response.message);
+          } else {
+            onOpen('error', response.message);
+          }
+        } catch (error) {
+          onOpen('error', 'Something went wrong, please try again later!');
+        }
+      },
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+      .min(2, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+      email: Yup.string()
+      .email('Invalid email')
+      .required('Required'),
+      type: Yup.string()
+      .required('Required'),
+      comment: Yup.string()
+      .min(10, 'Too Short!')
+      .required('Required'),
+    }),
   });
 
   return (
@@ -46,6 +76,8 @@ const LandingSection = () => {
                 <Input
                   id="firstName"
                   name="firstName"
+                  onChange={formik.handleChange}
+                  value={formik.values.firstName}
                 />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
@@ -55,6 +87,8 @@ const LandingSection = () => {
                   id="email"
                   name="email"
                   type="email"
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
                 />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
@@ -74,6 +108,8 @@ const LandingSection = () => {
                   id="comment"
                   name="comment"
                   height={250}
+                  onChange={formik.handleChange}
+                  value={formik.values.comment}
                 />
                 <FormErrorMessage></FormErrorMessage>
               </FormControl>
