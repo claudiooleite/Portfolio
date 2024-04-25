@@ -27,6 +27,7 @@ const projects = [
     description:
       "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
     getImageSrc: () => require("../images/photo4.jpg"),
+    // url: github add url for linkiing with project
   },
 ];
 
@@ -53,6 +54,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            // url: github add url for linkiing with project
           />
         ))}
       </Box>

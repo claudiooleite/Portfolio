@@ -25,21 +25,11 @@ const LandingSection = () => {
     initialValues: {
       firstName:'',
       email:'',
-      type:'',
+      type:'hireMe',
       comment:'',
     },
-    onSubmit: async (values, { resetForm }) => {
-      try {
-        await submit('your-api-endpoint', values); // Pass the URL and values
-        if (!isLoading && response?.type === 'success') {
-          onOpen('success', response.message);
-          resetForm(); // Reset the form if submission is successful 
-        } else {
-          onOpen('error', response.message);
-        }
-      } catch (error) {
-        onOpen('error', 'Something went wrong, please try again later!');
-      }
+    onSubmit: (values) => { 
+      submit('https://john.com/contactme', values); 
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -53,10 +43,19 @@ const LandingSection = () => {
       .oneOf(['hireMe', 'openSource', 'other'])
       .required('Required'),
       comment: Yup.string()
-      .min(10, 'Too Short!')
+      .min(25, 'Too Short!')
       .required('Required'),
     }),
   });
+
+  useEffect(() => { 
+    if (response) { 
+      onOpen(response.type, response.message); 
+      if (response.type === 'success') { 
+        formik.resetForm(); 
+      } 
+    } 
+  }, [response]); 
 
   
   return (
@@ -111,7 +110,7 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full">
+              <Button type="submit" colorScheme="purple" width="full"  isLoading={isLoading}>
                 Submit
               </Button>
             </VStack>

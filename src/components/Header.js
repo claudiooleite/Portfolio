@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faMedium, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
+
 
 export const socials = [
   {
@@ -31,7 +31,9 @@ export const socials = [
 const Header = ({socials}) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const headerRef = useRef(null);
+
   useEffect(() => {
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       if (prevScrollPos > currentScrollPos) {
@@ -62,8 +64,6 @@ const Header = ({socials}) => {
     }
   };
 
-
-
   return (
     <Box
       ref={headerRef}
@@ -87,11 +87,16 @@ const Header = ({socials}) => {
         >
           <nav>
             <HStack spacing={4}>
-                {socials.map((social, index) => (
-                  <a key={index} href={social.url} >
-                    <FontAwesomeIcon icon={social.icon} size="2x" />
-                  </a>
-                ))}
+                {socials.map(({ icon, url }) => ( 
+                  <a 
+                    key={url} 
+                    href={url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                  > 
+                    <FontAwesomeIcon icon={icon} size="2x" key={url} /> 
+                  </a> 
+                ))} 
             </HStack>
           </nav>
           <nav>

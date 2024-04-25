@@ -9,25 +9,21 @@ const Cards = ({ title, description, imageSrc }) => {
   // You should be able to implement the component with the elements imported above.
   // Feel free to import other UI components from Chakra UI if you wish to.
   return (
-    <>
-      <Card>
-         
-        <CardBody>
-          <Image src={imageSrc} borderRadius='lg'/>
+      <Card cursor="pointer">
+        <CardBody >
+          <Image src={imageSrc} borderRadius='lg' alt={title}/>
           <Stack mt='6' spacing='3'>
-            <Heading  as='h3' size='lg'>{title}</Heading>
-            <Text>{description}</Text>
+            <Heading  as='h3' size='md'>{title}</Heading>
+            <Text color="#64748b" fontSize="lg">{description}</Text>
           </Stack>
         </CardBody>
         <CardFooter>
-          <HStack>
-            <Heading size='xs'>See More</Heading>
+          <HStack spacing={2} alignItems="center">
+            <p>See more</p> 
             <FontAwesomeIcon icon={faArrowRight} size="1x"/>
           </HStack>
         </CardFooter>
       </Card>
-
-    </>
   )
 };
 
