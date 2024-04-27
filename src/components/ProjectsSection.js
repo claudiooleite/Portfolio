@@ -5,10 +5,11 @@ import Cards from "./Cards";
 
 const projects = [
   {
-    title: "React Space",
+    title: "React CV App",
     description:
       "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
     getImageSrc: () => require("../images/photo1.jpg"),
+    url: 'https://odincvapp.netlify.app/'
   },
   {
     title: "React Infinite Scroll",
@@ -54,6 +55,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            link={project.url}
             // url: github add url for linkiing with project
           />
         ))}

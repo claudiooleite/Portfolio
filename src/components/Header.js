@@ -19,10 +19,6 @@ export const socials = [
     url: "https://www.linkedin.com/in/claudio-leite-bb2a3262/",
   },
   {
-    icon: faMedium,
-    url: "https://medium.com",
-  },
-  {
     icon: faStackOverflow,
     url: "https://stackoverflow.com/users/23282484/claudio-leite",
   },
