@@ -12,7 +12,7 @@ const Cards = ({ title, description, imageSrc, link}) => {
         target="_blank" 
         rel="noopener noreferrer"
       >
-        <Card >
+        <Card variant='elevated'>
           <CardBody >
             <Image src={imageSrc} borderRadius='lg' alt={title}/>
             <Stack mt='6' spacing='3'>

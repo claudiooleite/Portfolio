@@ -7,28 +7,31 @@ const projects = [
   {
     title: "React CV App",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+    "I constructed a CV application using React.js, harnessing useState, useEffect, and useContext for state management. Users can input their details and instantly preview their CV in the browser. This project allowed me to refine my React skills and highlights my ability to create dynamic user experiences.",
     getImageSrc: () => require("../images/photo1.jpg"),
     url: 'https://odincvapp.netlify.app/'
   },
   {
-    title: "React Infinite Scroll",
+    title: "Portfolio Website",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+    "I developed a portfolio app in React as part of the React Advanced course on Coursera, utilizing useState, useEffect, and custom hooks. This website component showcases my proficiency in React and demonstrates my ability to implement advanced concepts effectively. Click the link to explore the code on GitHub.",
     getImageSrc: () => require("../images/photo2.jpg"),
+    url:'https://github.com/claudiooleite/Portfolio'
   },
   {
-    title: "Photo Gallery",
+    title: "Etch-a-sketch",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
+
+    "In this project, I crafted a browser-based toy that combines the features of a sketchpad and an Etch-A-Sketch! This challenge was an opportunity for me to hone my skills in DOM manipulation, JavaScript methods, and CSS techniques.",
+    getImageSrc: () => require("../images/pic2.JPG"),
+    url:'https://claudiooleite.github.io/etch-a-sketch/'
   },
   {
     title: "Event planner",
     description:
       "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
     getImageSrc: () => require("../images/photo4.jpg"),
-    // url: github add url for linkiing with project
+    
   },
 ];
 
