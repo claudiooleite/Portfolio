@@ -82,7 +82,7 @@ const Header = ({socials}) => {
           alignItems="center"
         >
           <nav>
-            <HStack spacing={4}>
+            <HStack spacing={8}>
                 {socials.map(({ icon, url }) => ( 
                   <a 
                     key={url} 
