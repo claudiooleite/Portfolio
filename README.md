@@ -1,0 +1,1 @@
+    "I developed a portfolio app in React as part of the React Advanced course on Coursera, utilizing useState, useEffect, and custom hooks. This website component showcases my proficiency in React and demonstrates my ability to implement advanced concepts effectively. Click the link to explore the code on GitHub.",
