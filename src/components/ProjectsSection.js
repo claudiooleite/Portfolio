@@ -27,11 +27,11 @@ const projects = [
     url:'https://claudiooleite.github.io/etch-a-sketch/'
   },
   {
-    title: "Event planner",
+    title: "Memory Gif Game",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
-    
+      "The Memory Gif Game app is a simple and intuitive web application designed to showcase GIF images fetched from the GIPHY API. With this app, users can enjoy a dynamic display of GIFs, interact with them, and even shuffle the displayed images for added fun.",
+    getImageSrc: () => require("../images/pic4.JPG"),
+    url:'https://memory-gif-game.netlify.app'
   },
 ];
 
