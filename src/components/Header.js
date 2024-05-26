@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faMedium, faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faMedium,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
-
 
 export const socials = [
   {
@@ -24,28 +28,27 @@ export const socials = [
   },
 ];
 
-const Header = ({socials}) => {
+const Header = ({ socials }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const headerRef = useRef(null);
 
   useEffect(() => {
-
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       if (prevScrollPos > currentScrollPos) {
         // Scrolling up
-        headerRef.current.style.transform = 'translateY(0)';
+        headerRef.current.style.transform = "translateY(0)";
       } else {
         // Scrolling down
-        headerRef.current.style.transform = 'translateY(-200px)';
+        headerRef.current.style.transform = "translateY(-200px)";
       }
       setPrevScrollPos(currentScrollPos);
     };
-  
-    window.addEventListener('scroll', handleScroll);
-  
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
 
@@ -83,24 +86,24 @@ const Header = ({socials}) => {
         >
           <nav>
             <HStack spacing={8}>
-                {socials.map(({ icon, url }) => ( 
-                  <a 
-                    key={url} 
-                    href={url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                  > 
-                    <FontAwesomeIcon icon={icon} size="2x" key={url} /> 
-                  </a> 
-                ))} 
+              {socials.map(({ icon, url }) => (
+                <a
+                  key={url}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={icon} size="2x" key={url} />
+                </a>
+              ))}
             </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
-              <a href="/#contact-me" onClick={handleClick('contactme')}>
+              <a href="/#contact-me" onClick={handleClick("contactme")}>
                 <span>Contact Me</span>
               </a>
-              <a href="/#projects"  onClick={handleClick('projects')}>
+              <a href="/#projects" onClick={handleClick("projects")}>
                 <span>Projects</span>
               </a>
             </HStack>
