@@ -14,8 +14,8 @@ const projects = [
   {
     title: "Restaurant Website",
     description:
-      "This project was created as a part of the final assessment for the front-end development course. It demonstrates a comprehensive understanding of front-end development concepts using React. The application is designed to handle table bookings, display weekly specials, and navigate through different sections of the restaurant's offerings.",
-    getImageSrc: () => require("../images/main.phone.png"),
+      "It was created as a part of the final assessment for the front-end development course. It shows a comprehensive understanding of front-end development concepts using React. The application is designed to handle table bookings, display weekly specials, and navigate through different sections of the restaurant's offerings.",
+    getImageSrc: () => require("../images/main.largedisplay.png"),
     url: "https://restaurantbookingproject.netlify.app/",
   },
   {
