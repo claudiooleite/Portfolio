@@ -20,7 +20,7 @@ function App() {
           <LandingSection />
           <ProjectsSection />
           <AboutMe />
-          {/* <ContactMeSection /> */}
+          <ContactMeSection />
           <Footer />
           <Alert />
         </main>
