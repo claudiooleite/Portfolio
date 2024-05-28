@@ -7,7 +7,7 @@ const useSubmit = () => {
   const submit = async (url, data) => {
     setLoading(true);
     try {
-      const res = await fetch("/.netlify/functions/contact", {
+      const res = await fetch("../netlify/functions/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

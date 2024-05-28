@@ -14,8 +14,8 @@ exports.handler = async function(event, context) {
   const { firstName, email, type, comment } = JSON.parse(event.body);
 
   const msg = {
-    to: 'your-email@example.com', // Your email address
-    from: 'your-sendgrid-verified-email@example.com', // Verified sender
+    to: 'claudio.leite@hotmail.com', // Your email address
+    from: 'claudio.leite@hotmail.com', // Verified sender
     subject: `New Contact Form Submission - ${type}`,
     text: `Name: ${firstName}\nEmail: ${email}\nMessage: ${comment}`,
     html: `<p>Name: ${firstName}</p><p>Email: ${email}</p><p>Message: ${comment}</p>`,
