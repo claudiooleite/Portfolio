@@ -5,7 +5,7 @@ import { Heading, Text, Badge, Flex, Box } from "@chakra-ui/react";
 function AboutMe() {
   return (
     <FullScreenSection>
-      <Heading as="h2" size="xl" mb={4}>
+      <Heading as="h2" size="xl" mb={4} id="aboutme-section">
         Hello! 👋
       </Heading>
       <Text>
