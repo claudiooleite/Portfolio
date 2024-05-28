@@ -11,6 +11,7 @@ import {
   Select,
   Textarea,
   VStack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
@@ -53,6 +54,8 @@ const LandingSection = () => {
     }
   }, [response]);
 
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const [isLargerThan1028] = useMediaQuery("(min-width: 1028px)");
   return (
     <FullScreenSection
       isDarkBackground
@@ -60,7 +63,13 @@ const LandingSection = () => {
       py={16}
       spacing={8}
     >
-      <VStack p={32} alignItems="flex-start">
+      <VStack
+        w={isLargerThan1028 ? "1080px" : isLargerThan768 ? "700px" : "350px"}
+        p={32}
+        alignItems="flex-start"
+        paddingRight={isLargerThan768 ? "3.75em" : "1.25em"}
+        paddingLeft={isLargerThan768 ? "3.75em" : "1.25em"}
+      >
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
