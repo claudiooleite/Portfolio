@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
-const Cards = ({ title, description, imageSrc, link }) => {
+const Cards = ({ title, description, imageSrc, link, noOfLines }) => {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <Card variant="elevated">
@@ -33,7 +33,7 @@ const Cards = ({ title, description, imageSrc, link }) => {
             <Heading as="h3" size="md">
               {title}
             </Heading>
-            <Text color="#64748b" fontSize="lg">
+            <Text color="#64748b" fontSize="lg" noOfLines={noOfLines}>
               {description}
             </Text>
           </Stack>

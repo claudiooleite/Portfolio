@@ -1,6 +1,6 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, useMediaQuery } from "@chakra-ui/react";
 import Cards from "./Cards";
 
 const projects = [
@@ -35,6 +35,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
   return (
     <FullScreenSection
       backgroundColor="#14532d"
@@ -48,7 +49,11 @@ const ProjectsSection = () => {
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridTemplateColumns={
+          isLargerThan768
+            ? "repeat(2,minmax(0,1fr))"
+            : "repeat(1,minmax(0,1fr))"
+        }
         gridGap={8}
       >
         {projects.map((project) => (
@@ -58,6 +63,7 @@ const ProjectsSection = () => {
             description={project.description}
             imageSrc={project.getImageSrc()}
             link={project.url}
+            noOfLines={8}
           />
         ))}
       </Box>
