@@ -4,7 +4,7 @@ import FullScreenSection from "./FullScreenSection";
 
 const greeting = "Nice to meet you! I'm Claudio Leite.";
 const bio =
-  "A  a passionate front-end developer with a knack for creating dynamic and user-friendly web applications. ";
+  "A passionate front-end developer with a knack for creating dynamic and user-friendly web applications. ";
 
 const LandingSection = () => {
   const handleClick = (anchor) => () => {
