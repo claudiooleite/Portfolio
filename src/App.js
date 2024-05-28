@@ -8,8 +8,8 @@ import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socials } from "./components/Header";
-
-
+import AboutMe from "./components/AboutMe";
+import "./styles/global.css";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Header socials={socials} />
           <LandingSection />
           <ProjectsSection />
+          <AboutMe />
           <ContactMeSection />
           <Footer />
           <Alert />

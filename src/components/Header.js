@@ -7,7 +7,7 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, useMediaQuery } from "@chakra-ui/react";
 
 export const socials = [
   {
@@ -62,7 +62,7 @@ const Header = ({ socials }) => {
       });
     }
   };
-
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
   return (
     <Box
       ref={headerRef}
@@ -79,11 +79,31 @@ const Header = ({ socials }) => {
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
+          spacing={4}
           px={16}
           py={4}
-          justifyContent="space-between"
+          justifyContent={isLargerThan768 ? "space-between" : "center"}
           alignItems="center"
+          flexDirection={isLargerThan768 ? "row" : "column"}
         >
+          <nav>
+            <HStack spacing={16}>
+              {/* <a href="/#contact-me" onClick={handleClick("contactme")}>
+                <span>Contact Me</span>
+              </a>
+              <a href="/#projects" onClick={handleClick("projects")}>
+                <span>Projects</span>
+              </a> */}
+
+              <a
+                href="/#about-me"
+                onClick={handleClick("aboutme")}
+                style={{ fontSize: "28px" }}
+              >
+                claudioleite
+              </a>
+            </HStack>
+          </nav>
           <nav>
             <HStack spacing={8}>
               {socials.map(({ icon, url }) => (
@@ -96,16 +116,6 @@ const Header = ({ socials }) => {
                   <FontAwesomeIcon icon={icon} size="2x" key={url} />
                 </a>
               ))}
-            </HStack>
-          </nav>
-          <nav>
-            <HStack spacing={8}>
-              <a href="/#contact-me" onClick={handleClick("contactme")}>
-                <span>Contact Me</span>
-              </a>
-              <a href="/#projects" onClick={handleClick("projects")}>
-                <span>Projects</span>
-              </a>
             </HStack>
           </nav>
         </HStack>
