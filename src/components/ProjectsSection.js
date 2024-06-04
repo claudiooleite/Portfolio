@@ -5,18 +5,18 @@ import Cards from "./Cards";
 
 const projects = [
   {
-    title: "React CV App",
-    description:
-      "I constructed a CV application using React.js, harnessing useState, useEffect, and useContext for state management. Users can input their details and instantly preview their CV in the browser. This project allowed me to refine my React skills and highlights my ability to create dynamic user experiences.",
-    getImageSrc: () => require("../images/photo1.jpg"),
-    url: "https://odincvapp.netlify.app/",
-  },
-  {
     title: "Restaurant Website",
     description:
       "It was created as a part of the final assessment for the front-end development course. It shows a comprehensive understanding of front-end development concepts using React. The application is designed to handle table bookings, display weekly specials, and navigate through different sections of the restaurant's offerings.",
     getImageSrc: () => require("../images/main.largedisplay.png"),
     url: "https://restaurantbookingproject.netlify.app/",
+  },
+  {
+    title: "React CV App",
+    description:
+      "I constructed a CV application using React.js, harnessing useState, useEffect, and useContext for state management. Users can input their details and instantly preview their CV in the browser. This project allowed me to refine my React skills and highlights my ability to create dynamic user experiences.",
+    getImageSrc: () => require("../images/photo1.jpg"),
+    url: "https://odincvapp.netlify.app/",
   },
   {
     title: "Etch-a-sketch",

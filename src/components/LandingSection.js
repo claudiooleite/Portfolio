@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
+import image from '../images/claudio-linkedin.jpg'
 
 const greeting = "Nice to meet you! I'm Claudio Leite.";
 const bio =
@@ -28,7 +29,7 @@ const LandingSection = () => {
           <Avatar
             size="2xl"
             name="Claudio"
-            src={require("../images/pic.jpg")}
+            src={image}
             alt="Profile Picture"
           />
           <Heading as="h1" size="3xl">
