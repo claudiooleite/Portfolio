@@ -34,39 +34,39 @@ function AboutMe() {
           bring my skills to front-end development:
         </Heading>
         <Flex as="ul" mt={2} direction="column">
-          <Box as="li">
+          <Box >
             <Text>
               <strong>Analytical Thinking:</strong> Creating and analyzing
               training programs is similar to debugging and improving code.
             </Text>
           </Box>
-          <Box as="li">
+          <Box >
             <Text>
               <strong>Attention to Detail:</strong> Making precise training
               plans helps me write clean and accurate code.
             </Text>
           </Box>
-          <Box as="li">
+          <Box>
             <Text>
               <strong>Problem-Solving:</strong> Finding solutions to athletic
               challenges is like troubleshooting coding issues.
             </Text>
           </Box>
-          <Box as="li">
+          <Box >
             <Text>
               <strong>Effective Communication:</strong> Explaining complex
               training concepts is similar to working with team members and
               clients in tech projects.
             </Text>
           </Box>
-          <Box as="li">
+          <Box >
             <Text>
               <strong>Team Collaboration:</strong> Leading and working with
               sports teams helps me collaborate effectively with development
               teams.
             </Text>
           </Box>
-          <Box as="li">
+          <Box >
             <Text>
               <strong>Time Management:</strong> Managing training schedules and
               deadlines helps me handle project timelines efficiently.

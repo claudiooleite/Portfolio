@@ -12,6 +12,13 @@ const projects = [
     url: "https://restaurantbookingproject.netlify.app/",
   },
   {
+    title: "Memory Gif Game",
+    description:
+      "The Memory Gif Game app is a simple and intuitive web application designed to showcase GIF images fetched from the GIPHY API. With this app, users can enjoy a dynamic display of GIFs, interact with them, and even shuffle the displayed images for added fun.",
+    getImageSrc: () => require("../images/pic4.JPG"),
+    url: "https://memory-gif-game.netlify.app",
+  },
+  {
     title: "React CV App",
     description:
       "I constructed a CV application using React.js, harnessing useState, useEffect, and useContext for state management. Users can input their details and instantly preview their CV in the browser. This project allowed me to refine my React skills and highlights my ability to create dynamic user experiences.",
@@ -25,13 +32,7 @@ const projects = [
     getImageSrc: () => require("../images/pic2.JPG"),
     url: "https://claudiooleite.github.io/etch-a-sketch/",
   },
-  {
-    title: "Memory Gif Game",
-    description:
-      "The Memory Gif Game app is a simple and intuitive web application designed to showcase GIF images fetched from the GIPHY API. With this app, users can enjoy a dynamic display of GIFs, interact with them, and even shuffle the displayed images for added fun.",
-    getImageSrc: () => require("../images/pic4.JPG"),
-    url: "https://memory-gif-game.netlify.app",
-  },
+
 ];
 
 const ProjectsSection = () => {
@@ -63,7 +64,7 @@ const ProjectsSection = () => {
             description={project.description}
             imageSrc={project.getImageSrc()}
             link={project.url}
-            noOfLines={8}
+            noOfLines={[8, 7, 6]}
           />
         ))}
       </Box>
