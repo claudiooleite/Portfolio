@@ -4,10 +4,10 @@ const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (url, data) => {
+  const submit = async (data) => {
     setLoading(true);
     try {
-      const res = await fetch("../netlify/functions/contact", {
+      const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -20,13 +20,12 @@ const useSubmit = () => {
       if (res.ok) {
         setResponse({
           type: "success",
-          message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
+          message: `Thanks for your submission ${data.firstName}, I will get back to you shortly!`,
         });
       } else {
         setResponse({
           type: "error",
-          message:
-            result.message || "Something went wrong, please try again later!",
+          message: result.message || "Something went wrong, please try again later!",
         });
       }
     } catch (error) {

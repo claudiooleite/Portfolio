@@ -30,7 +30,7 @@ const LandingSection = () => {
       comment: "",
     },
     onSubmit: (values) => {
-      submit("https://john.com/contactme", values);
+      submit("/.netlify/functions/contact", values);
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
