@@ -1,0 +1,95 @@
+Fonts:
+
+Heading: "Poppins, sans-serif"
+Body: "Roboto, sans-serif"
+Subheading: "Roboto, sans-serif"
+
+UI Kit Structure:
+
+Colors:
+
+Primary Color: #2d3142ff (Gunmetal)
+Secondary Color: #ef8354ff (Coral)
+Background Color: #ffffffff (White)
+Text Color: #2d3142ff (Gunmetal)
+Typography:
+
+Heading:
+Font Family: Montserrat
+Font Weight: Bold
+Font Size: 36px
+Subheading:
+Font Family: Lato
+Font Weight: Semi-bold
+Font Size: 24px
+Text:
+Font Family: Roboto
+Font Weight: Regular
+Font Size: 16px
+Buttons:
+
+Primary Button:
+Background Color: #ef8354ff (Coral)
+Text Color: #ffffffff (White)
+Font Family: Montserrat
+Font Size: 16px
+Padding: 12px 24px
+Border Radius: 8px
+Secondary Button:
+Background Color: Transparent
+Border Color: #ef8354ff (Coral)
+Text Color: #ef8354ff (Coral)
+Font Family: Montserrat
+Font Size: 16px
+Padding: 12px 24px
+Border Radius: 8px
+Forms:
+
+Input Fields:
+Border Color: #bfc0c0ff (Silver)
+Focus Border Color: #ef8354ff (Coral)
+Font Family: Roboto
+Font Size: 16px
+Padding: 10px
+Border Radius: 4px
+Textareas:
+Border Color: #bfc0c0ff (Silver)
+Focus Border Color: #ef8354ff (Coral)
+Font Family: Roboto
+Font Size: 16px
+Padding: 10px
+Border Radius: 4px
+Cards:
+
+Card Background: #ffffffff (White)
+Card Shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)
+Card Border: 1px solid #bfc0c0ff (Silver)
+Card Padding: 20px
+Card Border Radius: 8px
+Navbar:
+
+Background: #2d3142ff (Gunmetal)
+Text Color: #ffffffff (White)
+Font Family: Montserrat
+Font Size: 18px
+Padding: 16px
+Border Bottom: 2px solid #ef8354ff (Coral)
+Footer:
+
+Background: #2d3142ff (Gunmetal)
+Text Color: #ffffffff (White)
+Font Family: Roboto
+Font Size: 14px
+Padding: 20px
+Applying Colors, Fonts, and Sizes:
+
+Heading: Use Montserrat font with a size of 36px for main headings.
+Subheading: Apply Lato font with a size of 24px for subheadings.
+Text: Utilize Roboto font with a size of 16px for regular text content.
+Backgrounds: Apply the background color #ffffffff (White) for the main body and sections.
+Font Colors: Use #2d3142ff (Gunmetal) for most text content and #ffffffff (White) for text on dark backgrounds.
+Button Styling: Apply the specified button styles for primary and secondary actions.
+Form Styling: Use the defined input field and textarea styles for form elements.
+Card Styling: Utilize the card styles for displaying content in a visually appealing manner.
+Navbar Styling: Apply the specified styles for the navigation bar.
+Footer Styling: Use the specified styles for the footer section.

@@ -1,9 +1,9 @@
 import React from "react";
-import {Box, Flex} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <Box backgroundColor="#18181b">
+    <Box backgroundColor="gunmetal">
       <footer>
         <Flex
           margin="0 auto"
@@ -13,8 +13,16 @@ const Footer = () => {
           alignItems="center"
           maxWidth="1024px"
           height={16}
+          fontSize={{ base: "16px", md: "24px", lg: "28px" }}
         >
-          <p>Claudio • © 2024</p>
+          <p
+            style={{
+              color: "white",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Claudio    •    ©    2024
+          </p>
         </Flex>
       </footer>
     </Box>

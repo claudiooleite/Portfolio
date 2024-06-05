@@ -39,7 +39,7 @@ const ProjectsSection = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="paynesGray"
       isDarkBackground
       p={8}
       alignItems="flex-start"

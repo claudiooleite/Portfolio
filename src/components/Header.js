@@ -7,7 +7,7 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Box, HStack, useMediaQuery } from "@chakra-ui/react";
+import { Box, HStack, useMediaQuery, Link} from "@chakra-ui/react";
 
 export const socials = [
   {
@@ -75,7 +75,7 @@ const Header = ({ socials }) => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
+      backgroundColor={"gunmetal"}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
@@ -88,20 +88,15 @@ const Header = ({ socials }) => {
         >
           <nav>
             <HStack spacing={16}>
-              {/* <a href="/#contact-me" onClick={handleClick("contactme")}>
-                <span>Contact Me</span>
-              </a>
-              <a href="/#projects" onClick={handleClick("projects")}>
-                <span>Projects</span>
-              </a> */}
-
-              <a
+              <Link
                 href="/#about-me"
                 onClick={handleClick("aboutme")}
-                style={{ fontSize: "28px" }}
+                fontSize={{ base: "16px", md: "24px", lg: "28px" }}
+                color="white"
+                fontFamily="'Poppins', sans-serif"
               >
                 claudioleite
-              </a>
+              </Link>
             </HStack>
           </nav>
           <nav>
@@ -113,7 +108,11 @@ const Header = ({ socials }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FontAwesomeIcon icon={icon} size="2x" key={url} />
+                  <FontAwesomeIcon
+                    icon={icon}
+                    size={isLargerThan768 ? "xl" : "md"}
+                    key={url}
+                  />
                 </a>
               ))}
             </HStack>

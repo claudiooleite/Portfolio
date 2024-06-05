@@ -5,7 +5,7 @@ import image from '../images/claudio-linkedin.jpg'
 
 const greeting = "Nice to meet you! I'm Claudio Leite.";
 const bio =
-  "A passionate front-end developer with a knack for creating dynamic and user-friendly web applications. ";
+  "A dedicated front-end developer with a passion for crafting dynamic and user-friendly web applications.";
 
 const LandingSection = () => {
   const handleClick = (anchor) => () => {
@@ -22,7 +22,7 @@ const LandingSection = () => {
     <FullScreenSection
       justifyContent="center"
       isDarkBackground
-      backgroundColor="#2A4365"
+      backgroundColor="lightGray"
     >
       <VStack spacing={4}>
         <VStack textAlign="center">
@@ -32,17 +32,17 @@ const LandingSection = () => {
             src={image}
             alt="Profile Picture"
           />
-          <Heading as="h1" size="3xl">
+          <Heading as="h1" size="3xl" color="gunmetal">
             {greeting}
           </Heading>
         </VStack>
-        <VStack spacing={6} textAlign="center">
+        <VStack spacing={6} textAlign="center" color="gunmetal">
           <Heading as="h4" size="md">
             {bio}
           </Heading>
         </VStack>
         <VStack>
-          <Text as="u" fontSize="2xl">
+          <Text as="u" fontSize="2xl" color="gunmetal">
             <a href="/#contact-me" onClick={handleClick("contactme")}>
               <span>Contact Me</span>
             </a>

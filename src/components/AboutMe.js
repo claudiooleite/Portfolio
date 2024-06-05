@@ -19,7 +19,7 @@ function AboutMe() {
 
         <Text mt={4}>
           To improve my skills even further, I completed the{" "}
-          <Badge colorScheme="blue">
+          <Badge color="coral">
             Meta Front-End Professional Certification
           </Badge>
           . This course helped me learn modern frameworks and advanced topics. I
