@@ -15,3 +15,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes waveBorder {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #2d3142ff; /* Change to your primary color */
+  }
+  100% {
+    border-color: transparent;
+  }
+}

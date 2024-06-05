@@ -1,13 +1,36 @@
 import React from "react";
 import { Avatar, Heading, VStack, Text } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
-import image from '../images/claudio-linkedin.jpg'
+import image from "../images/claudio-linkedin.jpg";
+import { useEffect, useRef } from "react";
 
-const greeting = "Nice to meet you! I'm Claudio Leite.";
+
+const greeting = "Nice to meet you!";
 const bio =
-  "A dedicated front-end developer with a passion for crafting dynamic and user-friendly web applications.";
+  " I'm Claudio Leite. A dedicated front-end developer with a passion for crafting dynamic and user-friendly web applications.";
 
 const LandingSection = () => {
+  const avatarRef = useRef(null);
+
+  useEffect(() => {
+    const avatarElement = avatarRef.current;
+
+    const animation = () => {
+      avatarElement.style.animation = "waveBorder 2s infinite";
+    };
+
+    const animationEnd = () => {
+      avatarElement.style.animation = ""; // Clear animation to prevent memory leak
+    };
+
+    avatarElement.addEventListener("mouseenter", animation);
+    avatarElement.addEventListener("animationend", animationEnd);
+
+    return () => {
+      avatarElement.removeEventListener("mouseenter", animation);
+      avatarElement.removeEventListener("animationend", animationEnd);
+    };
+  }, []);
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -26,12 +49,19 @@ const LandingSection = () => {
     >
       <VStack spacing={4}>
         <VStack textAlign="center">
-          <Avatar
-            size="2xl"
-            name="Claudio"
-            src={image}
-            alt="Profile Picture"
-          />
+          <a href="/#about-me" onClick={handleClick("aboutme")}>
+            <Avatar
+              size="2xl"
+              name="Claudio"
+              src={image}
+              alt="Profile Picture"
+              ref={avatarRef}
+              style={{
+                border: "2px solid transparent", // Initial transparent border
+                borderRadius: "50%", // Make it circular
+              }}
+            />
+          </a>
           <Heading as="h1" size="3xl" color="gunmetal">
             {greeting}
           </Heading>
