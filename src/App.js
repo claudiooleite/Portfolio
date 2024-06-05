@@ -7,6 +7,7 @@ import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
 import { socials } from "./components/Header";
 import AboutMe from "./components/AboutMe";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <ContactMeSection />
           <Footer />
           <Alert />
+          <ScrollToTopButton/>
         </main>
       </AlertProvider>
   );
