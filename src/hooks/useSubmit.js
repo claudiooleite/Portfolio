@@ -20,7 +20,7 @@ const useSubmit = () => {
       if (res.ok) {
         setResponse({
           type: "success",
-          message: `Thanks for your submission ${data.firstName}, I will get back to you shortly!`,
+          message: `Thanks for your submission! Unfortunately this is a testing version. You can reach me at claudio.leite@hotmail.com.`,
         });
       } else {
         setResponse({
@@ -31,7 +31,7 @@ const useSubmit = () => {
     } catch (error) {
       setResponse({
         type: "error",
-        message: "Something went wrong, please try again later!",
+        message: "Something went wrong. Unfortunately this is a testing version. You can reach me at claudio.leite@hotmail.com.",
       });
     } finally {
       setLoading(false);
