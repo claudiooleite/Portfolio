@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading, useMediaQuery } from "@chakra-ui/react";
 import Cards from "./Cards";
+import video1 from "../video/littlelemon.mp4";
+import video2 from "../video/musichubrecord.mp4";
+import "../styles/cards.css";
 
 const projects = [
   {
@@ -10,6 +13,15 @@ const projects = [
       "It was created as a part of the final assessment for the front-end development course. It shows a comprehensive understanding of front-end development concepts using React. The application is designed to handle table bookings, display weekly specials, and navigate through different sections of the restaurant's offerings.",
     getImageSrc: () => require("../images/main.largedisplay.png"),
     url: "https://restaurantbookingproject.netlify.app/",
+    video: video1,
+  },
+  {
+    title: "Harmony Hub Music Store",
+    description:
+      "The Harmony Hub Music Store is an e-commerce platform for purchasing musical instruments and accessories. It includes features like a product catalog, detailed product pages, a shopping cart, and a checkout process. This project was built to demonstrate my proficiency in frontend development and modern web technologies.",
+    getImageSrc: () => require("../images/Screenshot 2024-07-08 130116.png"),
+    url: "https://harmonyhubproject.netlify.app/",
+    video: video2,
   },
   {
     title: "Memory Gif Game",
@@ -32,11 +44,28 @@ const projects = [
     getImageSrc: () => require("../images/pic2.JPG"),
     url: "https://claudiooleite.github.io/etch-a-sketch/",
   },
-
 ];
 
 const ProjectsSection = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
   return (
     <FullScreenSection
       backgroundColor="paynesGray"
@@ -57,15 +86,26 @@ const ProjectsSection = () => {
         }
         gridGap={8}
       >
-        {projects.map((project) => (
+        {projects.slice(0, 2).map((project) => (
           <Cards
             key={project.title}
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
             link={project.url}
-            noOfLines={[8, 7, 6]}
-          />
+            noOfLines={[5]}
+          >
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <video
+                ref={videoRef}
+                src={project.video}
+                className="project-video"
+              />
+            </div>
+          </Cards>
         ))}
       </Box>
     </FullScreenSection>
