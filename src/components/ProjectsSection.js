@@ -24,6 +24,13 @@ const projects = [
     video: video2,
   },
   {
+    title: "Pantry Pall",
+    description:
+      "PantryPal is a smart recipe management app designed to help you make the most of the ingredients you have on hand. Whether you're a seasoned cook or just starting out, PantryPal lets you search for recipes based on what's in your pantry, track your dietary preferences, and discover new meal ideas with ease.",
+    getImageSrc: () => require("../images/pantrypall.png"),
+    url: "https://pantrypall.netlify.app",
+  },
+  {
     title: "Memory Gif Game",
     description:
       "The Memory Gif Game app is a simple and intuitive web application designed to showcase GIF images fetched from the GIPHY API. With this app, users can enjoy a dynamic display of GIFs, interact with them, and even shuffle the displayed images for added fun.",
@@ -72,8 +79,7 @@ const ProjectsSection = () => {
       isDarkBackground
       p={8}
       alignItems="flex-start"
-      spacing={8}
-    >
+      spacing={8}>
       <Heading as="h1" id="projects-section">
         Featured Projects
       </Heading>
@@ -81,24 +87,21 @@ const ProjectsSection = () => {
         display="grid"
         gridTemplateColumns={
           isLargerThan768
-            ? "repeat(2,minmax(0,1fr))"
+            ? "repeat(3,minmax(0,1fr))"
             : "repeat(1,minmax(0,1fr))"
         }
-        gridGap={8}
-      >
-        {projects.slice(0, 2).map((project) => (
+        gridGap={8}>
+        {projects.slice(0, 3).map((project) => (
           <Cards
             key={project.title}
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
             link={project.url}
-            noOfLines={[5]}
-          >
+            noOfLines={[5]}>
             <div
               onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+              onMouseLeave={handleMouseLeave}>
               <video
                 ref={videoRef}
                 src={project.video}

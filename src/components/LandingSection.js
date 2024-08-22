@@ -4,7 +4,6 @@ import FullScreenSection from "./FullScreenSection";
 import image from "../images/claudio-linkedin.jpg";
 import { useEffect, useRef } from "react";
 
-
 const greeting = "Nice to meet you!";
 const bio =
   " I'm Claudio Leite. A dedicated front-end developer with a passion for crafting dynamic and user-friendly web applications.";
@@ -45,8 +44,7 @@ const LandingSection = () => {
     <FullScreenSection
       justifyContent="center"
       isDarkBackground
-      backgroundColor="lightGray"
-    >
+      backgroundColor="lightGray">
       <VStack spacing={4}>
         <VStack textAlign="center">
           <a href="/#about-me" onClick={handleClick("aboutme")}>
